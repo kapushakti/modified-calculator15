@@ -1,0 +1,148 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Modified Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background: #f0f0f0;
+  }
+  h2 {
+    text-align: center;
+  }
+  #display {
+    width: 100%;
+    font-size: 22px;
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: right;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .product-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .product-button img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 3px;
+  }
+  .product-button span {
+    font-size: 13px;
+  }
+  .amount-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: #2196F3;
+    color: black;
+    border-radius: 5px;
+  }
+  button.equal {
+    background: #FF9800;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+  }
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+<h2>Modified Calculator</h2>
+<div id="display">0</div>
+
+<div class="buttons">
+  <!-- Product Image Buttons -->
+  <button class="product-button" onclick="addAmount(24)">
+    <img src="https://i.ibb.co/WWSjwbfF/24.jpg" alt="₹24">
+    <span>₹24</span>
+  </button>
+  <button class="product-button" onclick="addAmount(28)">
+    <img src="https://i.ibb.co/KxwFMYwq/28.webp" alt="₹28">
+    <span>₹28</span>
+  </button>
+  <button class="product-button" onclick="addAmount(34)">
+    <img src="https://i.ibb.co/zT6xqry6/34.png" alt="₹34">
+    <span>₹34</span>
+  </button>
+  <button class="product-button" onclick="addAmount(63)">
+    <img src="https://i.ibb.co/MD3fDX2d/63.png" alt="₹63">
+    <span>₹63</span>
+  </button>
+  <button class="product-button" onclick="addAmount(77)">
+    <img src="https://i.ibb.co/WWgWFDgw/77.jpg" alt="₹77">
+    <span>₹77</span>
+  </button>
+
+  <!-- Plain Amount Buttons -->
+  <button class="amount-button" onclick="addAmount(5)">₹5</button>
+  <button class="amount-button" onclick="addAmount(10)">₹10</button>
+  <button class="amount-button" onclick="addAmount(15)">₹15</button>
+  <button class="amount-button" onclick="addAmount(20)">₹20</button>
+  <button class="amount-button" onclick="addAmount(50)">₹50</button>
+  <button class="amount-button" onclick="addAmount(90)">₹90</button>
+  <button class="amount-button" onclick="addAmount(100)">₹100</button>
+</div>
+
+<input type="number" id="customAmount" placeholder="Enter custom amount" />
+
+<button class="equal" onclick="addCustomAmount()">Add Custom Amount</button>
+<button class="equal" onclick="clearDisplay()">Reset</button>
+
+<script>
+  let total = 0;
+  function updateDisplay() {
+    document.getElementById('display').textContent = total;
+  }
+  function addAmount(amount) {
+    total += amount;
+    updateDisplay();
+  }
+  function addCustomAmount() {
+    const customInput = document.getElementById('customAmount').value;
+    if(customInput) {
+      total += parseFloat(customInput);
+      updateDisplay();
+      document.getElementById('customAmount').value = '';
+    }
+  }
+  function clearDisplay() {
+    total = 0;
+    updateDisplay();
+  }
+</script>
+</body>
+</html>
