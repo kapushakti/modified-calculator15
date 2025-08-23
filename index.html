@@ -11,10 +11,11 @@
     margin: 0 auto;
     padding: 15px;
     background: #f0f0f0;
+  } /* <-- અહીં એક બ્રેકેટ ખૂટતું હતું, તે મેં ઉમેરી દીધું છે */
   h2 {
-  text-align: center;
-  color: red;
-}
+    text-align: center;
+    color: red;
+  }
   #display {
     width: 100%;
     font-size: 22px;
@@ -30,6 +31,8 @@
     gap: 8px;
     margin-bottom: 10px;
   }
+  
+  /* ===== અહીં ફેરફાર કરેલ છે ===== */
   .product-button {
     display: flex;
     flex-direction: column;
@@ -40,19 +43,22 @@
     color: black;
     border-radius: 5px;
     cursor: pointer;
-    padding: 6px;
+    padding: 10px; /* બટનની અંદર જગ્યા વધારી */
   }
   .product-button img {
-    width: 36px;
-    height: 36px;
+    width: 60px;  /* સાઈઝ વધારી */
+    height: 60px; /* સાઈઝ વધારી */
     object-fit: contain;
     background: #fff;
     border-radius: 3px;
-    margin-bottom: 3px;
+    margin-bottom: 5px; /* ફોટો અને લખાણ વચ્ચે જગ્યા વધારી */
   }
   .product-button span {
-    font-size: 13px;
+    font-size: 18px;    /* અક્ષરોની સાઈઝ વધારી */
+    font-weight: bold;  /* અક્ષરોને ઘાટા કર્યા */
   }
+  /* ============================== */
+
   .amount-button {
     padding: 10px;
     font-size: 16px;
